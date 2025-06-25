@@ -1,0 +1,11 @@
+.vscode/
+.history/
+
+*.o
+*.out
+*.exe
+*.a
+*.so
+
+build/
+CMakeCache.txt
