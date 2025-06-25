@@ -1,0 +1,4 @@
+- C Compiler (e.g., GCC, MinGW, or Clang)
+- Make utility (for using the provided Makefile)
+- Supported OS: Windows, Linux, or macOS
+- No external C libraries required (uses standard C library only)
