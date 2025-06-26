@@ -1,12 +1,13 @@
 #include <stdio.h>
+#include "board.h"
 
 #define RESET "\033[0m"
 #define RED "\033[31m"
 #define BLUE "\033[34m"
 
 void print_cell(char c) {
-    if (c == 'X') printf(RED " %c " RESET, c);
-    else if (c == 'O') printf(BLUE " %c " RESET, c);
+    if (c == X) printf(RED " %c " RESET, c);
+    else if (c == O) printf(BLUE " %c " RESET, c);
     else printf("   ");
 }
 
