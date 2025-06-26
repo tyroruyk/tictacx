@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "game.h"
+#include "support/game.h"
 
 #ifdef _WIN32
 #include <windows.h>
@@ -113,7 +113,7 @@ int main() {
         }
     }
 
-    printf("Thanks for playing \033[31mTic-Tac-Toe!\033[0m\n");
+    printf("Thanks for playing \033[31mTicTacX!\033[0m\n");
     printf("Press any key to exit...");
     getchar();
 
