@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "game.h"
 
 #ifdef _WIN32
 #include <windows.h>
@@ -54,6 +55,7 @@ int main() {
             getchar();
             clear();
 
+             run_game(1);
             // run 1
 
             printf("Press any key to return to the menu...");
