@@ -59,7 +59,7 @@ To run the game, follow these steps:
    ```
    or
    ```bash
-   make build
+   mkdir build
    gcc main.c support/game.c support/board.c -o build/tictacx
    ```
 4. Run the game:
