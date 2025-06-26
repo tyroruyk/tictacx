@@ -55,7 +55,7 @@ To run the game, follow these steps:
     ```
 3. Compile the code:
    ```bash
-   
+   make
    ```
 4. Run the game:
    ```bash
