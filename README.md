@@ -57,6 +57,11 @@ To run the game, follow these steps:
    ```bash
    make
    ```
+   or
+   ```bash
+   make build
+   gcc main.c support/game.c support/board.c -o build/tictacx
+   ```
 4. Run the game:
    ```bash
    ./build/tictacx
