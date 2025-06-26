@@ -51,7 +51,7 @@ To run the game, follow these steps:
    ```
 2. Navigate to the project directory:
    ```bash
-    cd tictacx
+   cd tictacx
     ```
 3. Compile the code:
    ```bash
@@ -59,8 +59,8 @@ To run the game, follow these steps:
    ```
 4. Run the game:
    ```bash
-    ./build/tictacx
-    ```
+   ./build/tictacx
+   ```
 5. Follow the on-screen instructions to play.
 
 ## Contributing
