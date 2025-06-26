@@ -4,11 +4,12 @@
 #define RESET "\033[0m"
 #define RED "\033[31m"
 #define BLUE "\033[34m"
+#define BLACK_BG "\033[40m"
 
 void print_cell(char c) {
-    if (c == X) printf(RED " %c " RESET, c);
-    else if (c == O) printf(BLUE " %c " RESET, c);
-    else printf("   ");
+    if (c == X) printf(RED BLACK_BG " %c " RESET, c);
+    else if (c == O) printf(BLUE BLACK_BG " %c " RESET, c);
+    else printf(BLACK_BG "   " RESET);
 }
 
 void print_board(char board[3][3]) {

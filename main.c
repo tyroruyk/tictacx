@@ -19,7 +19,6 @@ int main() {
             // return 0;
             system("chcp 65001");
         }
-        system("powershell -Command \"$Host.UI.RawUI.BackgroundColor = 'Black'; Clear-Host\"");
     #elif __linux__
         char *lang = getenv("LANG");
         if (!(lang && strstr(lang, "UTF-8"))) {
