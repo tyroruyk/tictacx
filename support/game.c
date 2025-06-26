@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// extern char X, O, EMPTY;
+//extern char X, O, EMPTY;
 
 void win_message(char board[3][3], char player);
 
