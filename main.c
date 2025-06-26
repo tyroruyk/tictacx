@@ -15,8 +15,9 @@ void clear();
 int main() {
     #ifdef _WIN32
         if (GetConsoleOutputCP() != 65001) {
-            printf("Windows: Unicode (UTF-8) is not enabled.\n");
-            return 0;
+            // printf("Windows: Unicode (UTF-8) is not enabled.\n");
+            // return 0;
+            system("chcp 65001");
         }
     #elif __linux__
         char *lang = getenv("LANG");
