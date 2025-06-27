@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include "support/game.h"
 
-#ifdef _WIN32
-#include <windows.h>
-#endif
+#ifdef _WIN32 // Windows
+#include <windows.h> // For Windows console functions
+#endif  // _WIN32 ifdef
 
 char X = 'X', Y = 'Y', EMPTY = ' ';
 
@@ -13,11 +13,12 @@ void about();
 void clear();
 
 int main() {
-    #ifdef _WIN32
-        if (GetConsoleOutputCP() != 65001) {
+    #ifdef _WIN32 // preprocessor directive for Windows
+        // Check if the console supports UTF-8 
+        if (GetConsoleOutputCP() != 65001) {  
             // printf("Windows: Unicode (UTF-8) is not enabled.\n");
             // return 0;
-            system("chcp 65001");
+            system("chcp 65001");  // runs this code to enable UTF-8 in the console (in this case - windows powershell)
         }
     #elif __linux__
         char *lang = getenv("LANG");
@@ -37,10 +38,14 @@ int main() {
     #endif
     
     clear();
-    printf("Welcome to \033[31mTicTacX!\033[0m\n");
+    printf("Welcome to \033[31mTicTacX!\033[0m\n");  // ANSI escape codes for colored text,  in this case RED 
 
-    while (1) {
+    while (1) {  // while true
         int choice;
+
+        // this segment of code is for the main menu and allows the player to visualize the choices to be made and how
+
+
         printf("1. Human vs Human (Multiplayer)\n");
         printf("2. Human vs AI (Easy)\n");
         printf("3. Human vs AI (Hard)\n");
@@ -49,16 +54,30 @@ int main() {
         printf("6. About the project\n");
         printf("7. Exit\n");
         printf("Enter a choice: ");
-        scanf("%d", &choice);
-        while (getchar() != '\n'); // input buffer flush
+        scanf("%d", &choice);  // read the choice from the player 
+        while (getchar() != '\n'); // input buffer flush, escape sequence to clear the input buffer 
         clear();
 
+        /*
+        this segment of the coe allows the program to work 
+        baased on the the whether the player chooses to play against another human,
+        play against the AI, or watch the AI play against itself.
+
+        after each choice, the run_game() function is called from game.h
+        which handles the game logic for the selected mode.
+
+        for choices 5, 6, 7
+        the instructions() and about() functions are called to display the instructions
+        and information about the project, respectively.
+
+
+        */
         if (choice == 1) {
-            printf("Press any key to start the game...");
-            getchar();
+            printf("Press any key to start the game..."); // similar to the previous segment, this allows the player to start the game
+            getchar(); 
             clear();
 
-            run_game(1);
+            run_game(1); // run game @ mode == 1 . [ refer to game.c for reference]
 
             printf("Press any key to return to the menu...");
             getchar();
