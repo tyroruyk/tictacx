@@ -8,10 +8,8 @@
 
 void print_cell(char c) {
     if (c == X) printf(RED BLACK_BG " %c " RESET, c); // ANSI escape code for red text and black background
-    else if (c == Y) printf(BLUE BLACK_BG " %c " RESET, c); // ANSI escape code for blue text and black background
-    else if (c == EMPTY) printf(BLACK_BG "   " RESET); // ANSI escape code for black background with no text
-    else if (c == O) printf(BLUE BLACK_BG " %c " RESET, c);
-    else printf(BLACK_BG "   " RESET);
+    else if (c == O) printf(BLUE BLACK_BG " %c " RESET, c); // ANSI escape code for blue text and black background
+    else printf(BLACK_BG "   " RESET); // ANSI escape code for black background with no text
 }
 
 /*
