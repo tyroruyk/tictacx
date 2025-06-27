@@ -38,13 +38,12 @@ int main() {
     #endif
     
     clear();
-    printf("Welcome to \033[31mTicTacX!\033[0m\n");  // ANSI escape codes for colored text,  in this case RED 
+    printf("Welcome to \033[31mTicTacX!\033[0m\n");  // ANSI escape codes for colored text, in this case RED 
 
     while (1) {  // while true
         int choice;
 
         // this segment of code is for the main menu and allows the player to visualize the choices to be made and how
-
 
         printf("1. Human vs Human (Multiplayer)\n");
         printf("2. Human vs AI (Easy)\n");
@@ -60,7 +59,7 @@ int main() {
 
         /*
         this segment of the coe allows the program to work 
-        baased on the the whether the player chooses to play against another human,
+        based on the the whether the player chooses to play against another human,
         play against the AI, or watch the AI play against itself.
 
         after each choice, the run_game() function is called from game.h
@@ -69,15 +68,14 @@ int main() {
         for choices 5, 6, 7
         the instructions() and about() functions are called to display the instructions
         and information about the project, respectively.
-
-
         */
+
         if (choice == 1) {
             printf("Press any key to start the game..."); // similar to the previous segment, this allows the player to start the game
             getchar(); 
             clear();
 
-            run_game(1); // run game @ mode == 1 . [ refer to game.c for reference]
+            run_game(1); // run game @ mode == 1  [ refer to game.c for reference]
 
             printf("Press any key to return to the menu...");
             getchar();

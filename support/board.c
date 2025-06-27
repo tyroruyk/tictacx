@@ -14,12 +14,11 @@ void print_cell(char c) {
     else printf(BLACK_BG "   " RESET);
 }
 
-
 /*
 the print_board() function prints the Tic Tac Toe board in a formatted way.
 It uses ANSI escape codes to color the text and format the output.
-
 */
+
 void print_board(char board[3][3]) {
     printf("    1   2   3\n");
     printf("  ╔═══╦═══╦═══╗\n");
