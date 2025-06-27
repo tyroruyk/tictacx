@@ -3,33 +3,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//extern char X, O, EMPTY;
-
-void win_message(char board[3][3], char player);
+void win_message(char board[3][3], char player); // win message declaration
 
 void run_game(int mode) {
-    char board[3][3] = {
+    char board[3][3] = { // empty game board initialization
         {EMPTY, EMPTY, EMPTY},
         {EMPTY, EMPTY, EMPTY},
         {EMPTY, EMPTY, EMPTY}
     };
-    char current_player = X;
-    int turn = 0;
+    char current_player = X; // always start with X
+    int turn = 0; // turns counter
     int row, col;
 
-    if (mode == 1) {
+    if (mode == 1) { // multiplayer
         while (1) {
             print_board(board);
             printf("Player \033[33m%c\033[0m\'s turn. Enter your move: ", current_player);
 
             if (scanf("%d %d", &row, &col) != 2) {
-                while (getchar() != '\n');
+                while (getchar() != '\n'); // input buffer flush
                 system("clear || cls");
                 printf("Invalid input. Please enter two numbers.\n");
                 continue;
             }
-            while (getchar() != '\n');
+            while (getchar() != '\n'); // input buffer flush
 
+            // overflow handler
             if (row < 1 || row > 3 || col < 1 || col > 3) {
                 system("clear || cls");
                 printf("Row and column must be between 1 and 3.\n");
@@ -38,6 +37,7 @@ void run_game(int mode) {
 
             row--; col--;
 
+            // double-input handler
             if (board[row][col] != EMPTY) {
                 system("clear || cls");
                 printf("Cell is already taken!\n");
@@ -49,6 +49,7 @@ void run_game(int mode) {
             board[row][col] = current_player;
             turn++;
 
+            // row and column check
             for (int i = 0; i < 3; i++) {
                 if (board[i][0] != EMPTY && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
                     win_message(board, current_player);
@@ -60,6 +61,7 @@ void run_game(int mode) {
                 }
             }
 
+            // diagonal checks
             if (board[0][0] != EMPTY && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
                 win_message(board, current_player);
                 return;
@@ -72,6 +74,7 @@ void run_game(int mode) {
             if (current_player == X) current_player = O;
             else current_player = X;
 
+            // draw logic
             if (turn == 9) {
                 system("clear || cls");
                 print_board(board);
@@ -79,17 +82,18 @@ void run_game(int mode) {
                 break;
             }
         }
-    } else if (mode == 2) {
+    } else if (mode == 2) { // easy ai
         printf("Coming soon! - Easy AI\n");
-    } else if (mode == 3) {
+    } else if (mode == 3) { // hard ai
         printf("Coming soon! - Hard AI\n");
-    } else if (mode == 4) {
+    } else if (mode == 4) { // ai gameplay
         printf("Coming soon! - AI vs AI\n");
     } else {
         return;
     }
 }
 
+// win message definition
 void win_message(char board[3][3], char player) {
     print_board(board);
     printf("\033[32mPlayer %c wins!\033[0m\n", player);
