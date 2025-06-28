@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 void win_message(char board[3][3], char player); // win message declaration
+void clear();
 
 void run_game(int mode) {
     char board[3][3] = { // empty game board initialization
@@ -18,11 +19,11 @@ void run_game(int mode) {
     if (mode == 1) { // multiplayer
         while (1) {
             print_board(board);
-            printf("Player \033[33m%c\033[0m\'s turn. Enter your move: ", current_player);
+            printf("\nPlayer \033[33m%c\033[0m\'s turn. Enter your move: ", current_player);
 
             if (scanf("%d %d", &row, &col) != 2) {
                 while (getchar() != '\n'); // input buffer flush
-                system("clear || cls");
+                clear();
                 printf("Invalid input. Please enter two numbers.\n");
                 continue;
             }
@@ -30,7 +31,7 @@ void run_game(int mode) {
 
             // overflow handler
             if (row < 1 || row > 3 || col < 1 || col > 3) {
-                system("clear || cls");
+                clear();
                 printf("Row and column must be between 1 and 3.\n");
                 continue;
             }
@@ -39,12 +40,12 @@ void run_game(int mode) {
 
             // double-input handler
             if (board[row][col] != EMPTY) {
-                system("clear || cls");
+                clear();
                 printf("Cell is already taken!\n");
                 continue;
             }
 
-            system("clear || cls");
+            clear();
 
             board[row][col] = current_player;
             turn++;
@@ -76,7 +77,7 @@ void run_game(int mode) {
 
             // draw logic
             if (turn == 9) {
-                system("clear || cls");
+                clear();
                 print_board(board);
                 printf("It's a draw!\n");
                 break;
@@ -96,5 +97,5 @@ void run_game(int mode) {
 // win message definition
 void win_message(char board[3][3], char player) {
     print_board(board);
-    printf("\033[32mPlayer %c wins!\033[0m\n", player);
+    printf("\n\033[32mPlayer %c wins!\033[0m\n", player);
 }
