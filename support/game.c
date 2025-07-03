@@ -85,10 +85,6 @@ void run_game(int mode) {
         }
     } else if (mode == 2) { // easy ai
         printf("Coming soon! - Easy AI\n");
-    } else if (mode == 3) { // hard ai
-        printf("Coming soon! - Hard AI\n");
-    } else if (mode == 4) { // ai gameplay
-        printf("Coming soon! - AI vs AI\n");
     } else {
         return;
     }

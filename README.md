@@ -17,9 +17,7 @@ Classic Tic-Tac-Toe game implemented in C as a project for the *CSE115* course. 
 ## Game Modes
 
 1. **Multiplayer Mode:** Two players can play against each other.
-2. **AI Mode (Easy):** One player can play against a computer opponent.
-3. **AI Mode (Hard):** One player can play against a more challenging computer opponent.
-4. **AI vs AI Mode:** Two computer opponents play against each other.
+2. **AI Mode:** One player can play against a computer opponent.
 
 ## How to Play
 
@@ -40,7 +38,6 @@ Classic Tic-Tac-Toe game implemented in C as a project for the *CSE115* course. 
 - Displays end-of-game messages for win or draw.
 - Option to replay after each game.
 - Clear instructions for controls and game rules.
-- AI difficulty levels with different strategies.
 
 ## Installation
 

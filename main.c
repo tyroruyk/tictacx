@@ -45,13 +45,11 @@ int main() {
 
         // this segment of code is for the main menu and allows the player to visualize the choices to be made and how
 
-        printf("1. Human vs Human (Multiplayer)\n");
-        printf("2. Human vs AI (Easy)\n");
-        printf("3. Human vs AI (Hard)\n");
-        printf("4. AI vs AI (Gameplay)\n");
-        printf("5. How to play the game\n");
-        printf("6. About the project\n");
-        printf("7. Exit\n");
+        printf("1. Human vs Human\n");
+        printf("2. Human vs AI\n");
+        printf("3. How to play the game\n");
+        printf("4. About the project\n");
+        printf("5. Exit\n");
         printf("Enter a choice: ");
         scanf("%d", &choice);  // read the choice from the player 
         while (getchar() != '\n'); // input buffer flush, escape sequence to clear the input buffer 
@@ -93,40 +91,18 @@ int main() {
             clear();
             continue;
         } else if (choice == 3) {
-            printf("Press any key to start the game...");
-            getchar();
-            clear();
-
-            run_game(3);
-
-            printf("Press any key to return to the menu...");
-            getchar();
-            clear();
-            continue;
-        } else if (choice == 4) {
-            printf("Press any key to start the game...");
-            getchar();
-            clear();
-
-            run_game(4);
-
-            printf("Press any key to return to the menu...");
-            getchar();
-            clear();
-            continue;
-        } else if (choice == 5) {
             instructions();
 
             getchar();
             clear();
             continue;
-        } else if (choice == 6) {
+        } else if (choice == 4) {
             about();
 
             getchar();
             clear();
             continue;
-        } else if (choice == 7) {
+        } else if (choice == 5) {
             break;
         } else {
             printf("Enter a valid choice!\n");
