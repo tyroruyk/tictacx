@@ -35,7 +35,40 @@
 
 \begin{document}
 
-\maketitle
+% Cover page
+\begin{titlepage}
+\thispagestyle{empty} % Remove header/footer from cover page
+\centering
+\vspace*{2cm}
+
+% Title
+{\huge\textbf{TicTacX: A Command-Line Tic-Tac-Toe Game Implementation in C}\par}
+\vspace{2cm}
+
+% Authors
+{\large
+Avishek Dutta (2524093042) \\
+Md Ishrak Mashroor (2524709042) \\
+Ashab Mahmud Raseen (2524767042) \\
+Sneha Nandy (2524508042) \\
+\par}
+\vspace{1.5cm}
+
+% Course information
+{\large CSE115.4 | Group 2\par}
+\vspace{2cm}
+
+% Date
+{\large Summer 2025\par}
+
+\vfill
+\end{titlepage}
+
+% Reset page numbering and start from page 2
+\setcounter{page}{2}
+
+% Switch to two-column layout for the rest of the document
+\twocolumn
 
 \begin{abstract}
 This paper summarises development of a C-based Tic-Tac-Toe game TicTacX developed in CSE115. It has a working multiplayer component to be used with an ANSI and Unicode enhanced command line interface and capable input validation and cross-platform support. The main highlights evidence modular design, data structures, and the development of UI. Additional Single-player mode updates will include AI.
