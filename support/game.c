@@ -2,6 +2,8 @@
 #include "board.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "GameAI.h"
+
 
 void win_message(char board[3][3], char player); // win message declaration
 void clear();
@@ -93,7 +95,36 @@ void run_game(int mode) {
             }
         }
     } else if (mode == 2) { // easy ai
-        printf("Coming soon! - Easy AI\n");
+
+
+        while(1){
+
+        print_board(board);
+        printf("\nPlayer \033[33m%c\033[0m's turn. Enter your move: ", current_player);
+        if (current_player ==X){
+        if (scanf("%d %d", &row, &col) != 2) {
+            while (getchar() != '\n'); // input buffer flush
+            clear();
+            printf("Invalid input. Please enter two numbers.\n");
+            continue;}
+        while (getchar() != '\n'); // input buffer flush
+        if(row<1 || row>3 || col<1 || col>3){
+            clear();
+            printf("Row and column must be between 1 and 3.\n");
+            continue;
+        }
+        row--; col--;
+            if (board[row][col] != EMPTY) {
+                clear();
+                printf("Cell is already taken!\n");
+                continue;
+            }
+            board[row][col] = X;
+
+
+        }
+
+
     } else {
         return;
     }
