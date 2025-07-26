@@ -48,6 +48,15 @@ void run_game(int mode) {
             clear();
 
             board[row][col] = current_player;
+
+                                        // DEBUG: print the current state of the board
+                                        // Uncomment the next line to see debug output
+
+                                        /*
+                                        printf("DEBUG: Player=%c placed at [%d][%d]\n", current_player, row, col);
+                                        print_board(board);
+                                        */
+
             turn++;
 
             // row and column check
