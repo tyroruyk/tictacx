@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "support/game.h"
+#include "support/GameAI.h"
 
 #ifdef _WIN32 // Windows
 #include <windows.h> // For Windows console functions
