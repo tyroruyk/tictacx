@@ -4,7 +4,7 @@
 #include "board.h"
 
 // Function to make a random valid move for AI
-void ai_make_move(char board[3][3]) {
+void ai_move(char board[3][3]) {
     int row, col;
     srand(time(NULL));
 
