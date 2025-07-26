@@ -16,6 +16,9 @@ $(BUILD_DIR)/board.o: $(SUPPORT_DIR)/board.c $(SUPPORT_DIR)/board.h | $(BUILD_DI
 $(BUILD_DIR)/game.o: $(SUPPORT_DIR)/game.c $(SUPPORT_DIR)/game.h | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+$(BUILD_DIR)/GameAI.o: $(SUPPORT_DIR)/GameAI.c $(SUPPORT_DIR)/GameAI.h | $(BUILD_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR)
 
