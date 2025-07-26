@@ -120,12 +120,13 @@ void run_game(int mode) {
                 continue;
             }
             board[row][col] = X;
+            }
+        else{ai_move(board);}   
+        turn++;
+        clear();
 
 
-        }
-
-
-    } else {
+    } }else {
         return;
     }
 }
