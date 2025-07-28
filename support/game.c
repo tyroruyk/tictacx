@@ -126,6 +126,58 @@ void run_game(int mode) {
         clear();
 
 
+                for (int i = 0; i < 3; i++) {
+            if (board[i][0] != EMPTY && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
+                clear();
+                print_board(board);
+                if (current_player == O)
+                    printf("\n\033[32mPlayer %c (Computer) wins!\033[0m\n", current_player);
+                else
+                    printf("\n\033[32mPlayer %c wins!\033[0m\n", current_player);
+                return;
+            }
+            if (board[0][i] != EMPTY && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
+                clear();
+                print_board(board);
+                if (current_player == O)
+                    printf("\n\033[32mPlayer %c (Computer) wins!\033[0m\n", current_player);
+                else
+                    printf("\n\033[32mPlayer %c wins!\033[0m\n", current_player);
+                return;
+            }
+        }
+
+        if (board[0][0] != EMPTY && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+            clear();
+            print_board(board);
+            if (current_player == O)
+                printf("\n\033[32mPlayer %c (Computer) wins!\033[0m\n", current_player);
+            else
+                printf("\n\033[32mPlayer %c wins!\033[0m\n", current_player);
+            return;
+        }
+
+        if (board[0][2] != EMPTY && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+            clear();
+            print_board(board);
+            if (current_player == O)
+                printf("\n\033[32mPlayer %c (Computer) wins!\033[0m\n", current_player);
+            else
+                printf("\n\033[32mPlayer %c wins!\033[0m\n", current_player);
+            return;
+        }
+
+        if (turn == 9) {
+            clear();
+            print_board(board);
+            printf("It's a draw!\n");
+            break;
+        }
+
+        // Switch players
+        current_player = (current_player == X) ? O : X;
+
+
     } }else {
         return;
     }
