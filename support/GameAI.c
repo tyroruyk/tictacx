@@ -6,7 +6,7 @@
 // Function to make a random valid move for AI
 void ai_move(char board[3][3]) {
     int row, col;
-    srand(time(NULL));
+    sleep(1); // Add 1 second time buffer
 
     while (1) {
         row = rand() % 3;
@@ -14,6 +14,7 @@ void ai_move(char board[3][3]) {
         if (board[row][col] == EMPTY) {
             board[row][col] = O;  // Computer is always O
             printf("Computer played at: %d %d\n", row + 1, col + 1);
+            sleep(1); // Add 1 second time buffer
             break;
         }
     }
