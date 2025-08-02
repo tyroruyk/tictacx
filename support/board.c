@@ -8,7 +8,7 @@
  *
  * Group: 02
  *
- * Version: 1.2
+ * Version: 1.3
  * Since: 1.0
  */
 #include <stdio.h>
@@ -33,18 +33,18 @@ It uses ANSI escape codes to color the text and format the output.
 
 void print_board(char board[3][3]) {
     printf("    1   2   3\n");
-    printf("  " BLACK_BG WHITE "╔═══╦═══╦═══╗\n" RESET);
+    printf("  " BLACK_BG WHITE "╔═══╦═══╦═══╗\n" RESET); // print top border
 
-    for (int i = 0; i < 3; i++) {
-        printf("%d " BLACK_BG WHITE "║" RESET, i + 1);
+    for (int i = 0; i < 3; i++) { //logic set to print the board by iterating through rows and columns
+        printf("%d " BLACK_BG WHITE "║" RESET, i + 1); // reset the color and print row number
         for (int j = 0; j < 3; j++) {
-            print_cell(board[i][j]);
-            printf(BLACK_BG WHITE "║" RESET);
+            print_cell(board[i][j]); // print the cell with appropriate color
+            printf(BLACK_BG WHITE "║" RESET); // print the right border of the cell
         }
         printf("\n");
 
-        if (i < 2) printf("  " BLACK_BG WHITE "╠═══╬═══╬═══╣\n" RESET);
+        if (i < 2) printf("  " BLACK_BG WHITE "╠═══╬═══╬═══╣\n" RESET); // print the separator between rows
     }
 
-    printf("  " BLACK_BG WHITE "╚═══╩═══╩═══╝\n" RESET);
+    printf("  " BLACK_BG WHITE "╚═══╩═══╩═══╝\n" RESET); // print bottom border
 }
