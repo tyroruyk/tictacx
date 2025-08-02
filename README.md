@@ -1,6 +1,6 @@
 # TicTacX
 
-Classic Tic-Tac-Toe game implemented in C as a project for the *CSE115* course. Played entirely through the command-line interface, featuring both multiplayer and AI game modes.
+Classic Tic-Tac-Toe game implemented in C as a project for the _CSE115_ course. Played entirely through the command-line interface, featuring both multiplayer and AI game modes.
 
 ## About
 
@@ -9,7 +9,7 @@ Classic Tic-Tac-Toe game implemented in C as a project for the *CSE115* course. 
 - **Instructor:** Mohammad Shifat-E-Rabbi
 - **Group:** 2
 - **Members:**
-  - 2524093042 – Avishek Dutta *(Lead)*
+  - 2524093042 – Avishek Dutta _(Lead)_
   - 2524709042 – Md Ishrak Mashroor
   - 2524767042 – Ashab Mahmud Raseen
   - 2524508042 – Sneha Nandy
@@ -22,8 +22,16 @@ Classic Tic-Tac-Toe game implemented in C as a project for the *CSE115* course. 
 ## How to Play
 
 1. Compile the code using a C compiler or makefile.
+   ("
+   (a) first locate the repository 'tictacx' in your local machine
+   (b) right click and open directory on windows powershell
+   (c) in the command line type 'make' and wait a few seconds for the code to compile. Ignore warnings.
+   ")
 2. Run the executable.
-3. Choose a game mode from the menu.
+   ("
+   (-) after compilation type 'build' in the command line.
+   ")
+3. Choose a game mode (type 1 or 2 and press enter)from the menu.
 4. Players take turns by entering their moves in the format `row column` (e.g., `1 2` for row 1, column 2).
 5. The game continues until a player wins or the board is full (draw).
 
@@ -42,6 +50,7 @@ Classic Tic-Tac-Toe game implemented in C as a project for the *CSE115* course. 
 ## Installation
 
 To run the game, follow these steps:
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/tyroruyk/tictacx.git
@@ -49,7 +58,7 @@ To run the game, follow these steps:
 2. Navigate to the project directory:
    ```bash
    cd tictacx
-    ```
+   ```
 3. Compile the code:
    ```bash
    make
@@ -66,7 +75,9 @@ To run the game, follow these steps:
 5. Follow the on-screen instructions to play.
 
 ## Contributing
+
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
 ## License
+
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details
