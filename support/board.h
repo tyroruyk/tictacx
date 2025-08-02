@@ -11,17 +11,17 @@
  * Version: 1.0
  * Since: 1.0
  */
-#ifndef BOARD_H
-#define BOARD_H
+#ifndef BOARD_H // include guard to prevent multiple inclusions
+#define BOARD_H // include guard
 
-#define RESET "\033[0m"
-#define RED "\033[31m"
-#define BLUE "\033[34m"
+#define RESET "\033[0m" // ANSI escape code to reset text formatting
+#define RED "\033[31m" // ANSI escape code for red text
+#define BLUE "\033[34m" // ANSI escape code for blue text
 
-#define X 'X'
-#define O 'O'
-#define EMPTY ' '
+#define X 'X' // define X as a character
+#define O 'O' // define O as a character
+#define EMPTY ' ' // define EMPTY as a character
 
-void print_board(char board[3][3]);
+void print_board(char board[3][3]); // call print_board() from board.c function to print the board
 
 #endif

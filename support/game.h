@@ -8,12 +8,12 @@
  *
  * Group: 02
  *
- * Version: 1.0
+ * Version: 1.1
  * Since: 1.0
  */
-#ifndef GAME_H
-#define GAME_H
+#ifndef GAME_H // include guard to prevent multiple inclusions
+#define GAME_H // include guard
 
-void run_game(int mode);
+void run_game(int mode); // function declaration for run_game
 
 #endif
