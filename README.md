@@ -22,15 +22,23 @@ Classic Tic-Tac-Toe game implemented in C as a project for the _CSE115_ course. 
 ## How to Play
 
 1. Compile the code using a C compiler or makefile.
+
    ("
+
    (a) first locate the repository 'tictacx' in your local machine
+
    (b) right click and open directory on windows powershell
+
    (c) in the command line type 'make' and wait a few seconds for the code to compile. Ignore warnings.
+
    ")
+
 2. Run the executable.
+
    ("
    (-) after compilation type './build/tictacx' in the command line.
    ")
+
 3. Choose a game mode (type 1 or 2 and press enter)from the menu.
 4. Players take turns by entering their moves in the format `row column` (e.g., `1 2` for row 1, column 2).
 5. The game continues until a player wins or the board is full (draw).
