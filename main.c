@@ -8,7 +8,7 @@
  *
  * Group: 02
  *
- * Version: 7.1
+ * Version: 7.2
  * Since: 1.0
  */
 #include <stdio.h>
@@ -90,15 +90,18 @@ int main() {
             run_game(1); // run game @ mode == 1  [ refer to game.c for reference]
 
             printf("Press any key to return to the menu...");
-            getchar();
-            clear();
+            getchar(); // input buffer flush
+            clear(); // reset the screen
+
+            // after the game ends, the player is returned to the main menu
+            // and can choose to play again or exit
             continue;
-        } else if (choice == 2) {
+        } else if (choice == 2) { // choose option 2 for human vs AI mode. 
             printf("Press any key to start the game...");
             getchar();
             clear();
 
-            run_game(2);
+            run_game(2); // run game @ mode == 2 [ refer to game.c for reference]
 
             printf("Press any key to return to the menu...");
             getchar();
