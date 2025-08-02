@@ -138,7 +138,7 @@ int main() {
     return 0;
 }
 
-void instructions() {
+void instructions() {  //  for option 3, this function displays the instructions for the game
     printf("==== How to Play TicTacX ====\n");
     printf("TicTacX is a classic Tic-Tac-Toe game for two players or vs AI.\n\n");
     printf("Game Board:\n");
@@ -155,7 +155,7 @@ void instructions() {
     printf("\nPress any key to return to the menu...");
 }
 
-void about() {
+void about() { // for option 4, this function displays information about the project
     printf("==== About This Project ====\n");
     printf("\033[31mTicTacX\033[0m - A Classic Tic-Tac-Toe Game!\n");
     printf("Developed by Group 2 for CSE115\n");
@@ -177,5 +177,5 @@ void about() {
 }
 
 void clear() {
-    system("clear || cls");
+    system("clear || cls"); // clear the console screen, works for both Linux and Windows
 }
