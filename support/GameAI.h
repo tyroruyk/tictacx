@@ -8,12 +8,12 @@
  *
  * Group: 02
  *
- * Version: 1.0
+ * Version: 1.1
  * Since: 1.0
  */
-#ifndef GAME_AI_H
-#define GAME_AI_H
+#ifndef GAME_AI_H // include guard to prevent multiple inclusions
+#define GAME_AI_H // include guard
 
-void ai_move(char board[3][3]);
+void ai_move(char board[3][3]); // call ai_move() from GameAI.c function to make a random move for the AI with board as parameter 
 
 #endif
