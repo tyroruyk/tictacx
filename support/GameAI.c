@@ -8,7 +8,7 @@
  *
  * Group: 02
  *
- * Version: 7.1
+ * Version: 1.1
  * Since: 1.0
  */
 #include <stdio.h>
