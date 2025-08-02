@@ -8,7 +8,7 @@
  *
  * Group: 02
  *
- * Version: 2.0
+ * Version: 2.1
  * Since: 1.0
  */
 #include "game.h"
@@ -33,10 +33,12 @@ void run_game(int mode) {
 
     if (mode == 1) { // multiplayer
         while (1) {
-            print_board(board);
+            print_board(board); // send the board to the print_board() function  in board.c
+            // print the board to the console
+            // and display the current player's turn
             printf("\nPlayer \033[33m%c\033[0m\'s turn. Enter your move: ", current_player);
 
-            if (scanf("%d %d", &row, &col) != 2) {
+            if (scanf("%d %d", &row, &col) != 2) { // input validation 
                 while (getchar() != '\n'); // input buffer flush
                 clear();
                 printf("Invalid input. Please enter two numbers.\n");
@@ -45,8 +47,9 @@ void run_game(int mode) {
             while (getchar() != '\n'); // input buffer flush
 
             // overflow handler
-            if (row < 1 || row > 3 || col < 1 || col > 3) {
-                clear();
+            if (row < 1 || row > 3 || col < 1 || col > 3) { // condition check for row and column
+                // if the input is not between 1 and 3, it will flush the input buffer and print an error message
+                clear(); 
                 printf("Row and column must be between 1 and 3.\n");
                 continue;
             }
