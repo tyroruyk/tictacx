@@ -8,7 +8,7 @@
  *
  * Group: 02
  *
- * Version: 2.1
+ * Version: 2.2
  * Since: 1.0
  */
 #include "game.h"
@@ -91,6 +91,11 @@ void run_game(int mode) {
 
             // diagonal checks
             if (board[0][0] != EMPTY && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+                /*
+                for this diagonal check, we check if the top-left corner is not empty
+                and if it is equal to the middle cell and the bottom-right cell.
+                If it is, we print the win message and return from the function.
+                */
                 win_message(board, current_player);
                 return;
             }
@@ -103,14 +108,16 @@ void run_game(int mode) {
             else current_player = X;
 
             // draw logic
-            if (turn == 9) {
+            if (turn == 9) { // when turn reaches 9, it means all cells are filled
+                // and no player has won, so it's a draw
                 clear();
                 print_board(board);
                 printf("It's a draw!\n");
                 break;
             }
         }
-    } else if (mode == 2) { // easy ai
+    } else if (mode == 2) { // ai mode uses ai_move() function from GameAI.h 
+        // in this mode, the player plays against a simple AI tha1t makes random moves
 
 
         while(1){
