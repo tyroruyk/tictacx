@@ -21,7 +21,7 @@ It selects a random empty cell on the board and places the AI's symbol (O) there
 */
 #include "GameAI.h"
 #include <unistd.h> // for sleep() function
-*/
+
 // Function to make a random valid move for AI
 void ai_move(char board[3][3]) {
     int row, col;
