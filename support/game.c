@@ -118,39 +118,66 @@ void run_game(int mode) {
         }
     } else if (mode == 2) { // ai mode uses ai_move() function from GameAI.h 
         // in this mode, the player plays against a simple AI tha1t makes random moves
+        while(1) {
+            print_board(board);
 
-
-        while(1){
-
-        print_board(board);
-        printf("\nPlayer \033[33m%c\033[0m's turn. Enter your move: ", current_player);
-        if (current_player ==X){
-        if (scanf("%d %d", &row, &col) != 2) {
-            while (getchar() != '\n'); // input buffer flush
-            clear();
-            printf("Invalid input. Please enter two numbers.\n");
-            continue;}
-        while (getchar() != '\n'); // input buffer flush
-        if(row<1 || row>3 || col<1 || col>3){
-            clear();
-            printf("Row and column must be between 1 and 3.\n");
-            continue;
-        }
-        row--; col--;
-            if (board[row][col] != EMPTY) {
-                clear();
-                printf("Cell is already taken!\n");
-                continue;
+            if (current_player == O) {
+                printf("\nPlayer \033[33m%c\033[0m's turn. Computer is thinking...\n", current_player);
+            } else {
+                printf("\nPlayer \033[33m%c\033[0m's turn. Enter your move: ", current_player);
             }
-            board[row][col] = X;
+
+            if (current_player == X) {
+                if (scanf("%d %d", &row, &col) != 2) {
+                    while (getchar() != '\n'); // input buffer flush
+                    clear();
+                    printf("Invalid input. Please enter two numbers.\n");
+                    continue;}
+                while (getchar() != '\n'); // input buffer flush
+                if(row<1 || row>3 || col<1 || col>3){
+                    clear();
+                    printf("Row and column must be between 1 and 3.\n");
+                    continue;
+                }
+
+                row--; col--;
+
+                if (board[row][col] != EMPTY) {
+                    clear();
+                    printf("Cell is already taken!\n");
+                    continue;
+                }
+                board[row][col] = X;
+            } else{
+                ai_move(board);
             }
-        else{ai_move(board);}   
-        turn++;
-        clear();
 
+            turn++;
+            clear();
+            
+            for (int i = 0; i < 3; i++) {
+                if (board[i][0] != EMPTY && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
+                    clear();
+                    print_board(board);
+                    if (current_player == O)
+                        printf("\n\033[32mPlayer %c (Computer) wins!\033[0m\n", current_player);
+                    else
+                        printf("\n\033[32mPlayer %c wins!\033[0m\n", current_player);
+                    return;
+                }
+                
+                if (board[0][i] != EMPTY && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
+                    clear();
+                    print_board(board);
+                    if (current_player == O)
+                        printf("\n\033[32mPlayer %c (Computer) wins!\033[0m\n", current_player);
+                    else
+                        printf("\n\033[32mPlayer %c wins!\033[0m\n", current_player);
+                    return;
+                }
+            }
 
-                for (int i = 0; i < 3; i++) {
-            if (board[i][0] != EMPTY && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
+            if (board[0][0] != EMPTY && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
                 clear();
                 print_board(board);
                 if (current_player == O)
@@ -159,7 +186,8 @@ void run_game(int mode) {
                     printf("\n\033[32mPlayer %c wins!\033[0m\n", current_player);
                 return;
             }
-            if (board[0][i] != EMPTY && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
+
+            if (board[0][2] != EMPTY && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
                 clear();
                 print_board(board);
                 if (current_player == O)
@@ -168,40 +196,18 @@ void run_game(int mode) {
                     printf("\n\033[32mPlayer %c wins!\033[0m\n", current_player);
                 return;
             }
+
+            if (turn == 9) {
+                clear();
+                print_board(board);
+                printf("It's a draw!\n");
+                break;
+            }
+
+            // Switch players
+            current_player = (current_player == X) ? O : X;
         }
-
-        if (board[0][0] != EMPTY && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
-            clear();
-            print_board(board);
-            if (current_player == O)
-                printf("\n\033[32mPlayer %c (Computer) wins!\033[0m\n", current_player);
-            else
-                printf("\n\033[32mPlayer %c wins!\033[0m\n", current_player);
-            return;
-        }
-
-        if (board[0][2] != EMPTY && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
-            clear();
-            print_board(board);
-            if (current_player == O)
-                printf("\n\033[32mPlayer %c (Computer) wins!\033[0m\n", current_player);
-            else
-                printf("\n\033[32mPlayer %c wins!\033[0m\n", current_player);
-            return;
-        }
-
-        if (turn == 9) {
-            clear();
-            print_board(board);
-            printf("It's a draw!\n");
-            break;
-        }
-
-        // Switch players
-        current_player = (current_player == X) ? O : X;
-
-
-    } }else {
+    } else {
         return;
     }
 }
