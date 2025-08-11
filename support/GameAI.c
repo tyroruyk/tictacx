@@ -26,7 +26,7 @@ It selects a random empty cell on the board and places the AI's symbol (O) there
 void ai_move(char board[3][3]) {
     int row, col;
     sleep(1); // Add 1 second time buffer
-    srand(time(NULL)); // Seed the random number generator
+
 
     while (1) {
         row = rand() % 3; // Random row between 0 and 2

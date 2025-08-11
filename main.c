@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include "support/game.h"
 #include "support/GameAI.h"
+#include <time.h>
 
 #ifdef _WIN32 // Windows
 #include <windows.h> // For Windows console functions
@@ -27,6 +28,8 @@ void about();
 void clear();
 
 int main() {
+    srand(time(NULL)); // Seed the random number generator
+
     #ifdef _WIN32 // preprocessor directive for Windows
         // Check if the console supports UTF-8 
         if (GetConsoleOutputCP() != 65001) {  
