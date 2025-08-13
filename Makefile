@@ -1,28 +1,15 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c11
-BUILD_DIR = build
-SUPPORT_DIR = support
-TARGET = $(BUILD_DIR)/tictacx
+SRCDIR = support
+BUILDDIR = build
+SOURCES = main.c $(SRCDIR)/game.c $(SRCDIR)/board.c $(SRCDIR)/GameAI.c
+TARGET = $(BUILDDIR)/tictacx
 
-$(TARGET): $(BUILD_DIR)/main.o $(BUILD_DIR)/board.o $(BUILD_DIR)/game.o $(BUILD_DIR)/GameAI.o
-	$(CC) $(CFLAGS) -o $@ $^
+$(TARGET): $(SOURCES) | $(BUILDDIR)
+	$(CC) $(CFLAGS) $(SOURCES) -o $(TARGET)
 
-$(BUILD_DIR)/main.o: main.c $(SUPPORT_DIR)/board.h $(SUPPORT_DIR)/game.h $(SUPPORT_DIR)/GameAI.h | $(BUILD_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(BUILD_DIR)/board.o: $(SUPPORT_DIR)/board.c $(SUPPORT_DIR)/board.h | $(BUILD_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(BUILD_DIR)/game.o: $(SUPPORT_DIR)/game.c $(SUPPORT_DIR)/game.h | $(BUILD_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(BUILD_DIR)/GameAI.o: $(SUPPORT_DIR)/GameAI.c $(SUPPORT_DIR)/GameAI.h | $(BUILD_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(BUILD_DIR):
-	mkdir $(BUILD_DIR)
+$(BUILDDIR):
+	mkdir -p $(BUILDDIR)
 
 clean:
-	rm -rf $(BUILD_DIR)/* 2>/dev/null || exit 0
-
-.PHONY: clean
+	rm -rf $(BUILDDIR)
